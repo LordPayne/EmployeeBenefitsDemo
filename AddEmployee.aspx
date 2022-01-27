@@ -73,22 +73,6 @@
             }
         }     
     </script>
-      <script type="text/javascript">
-          function textChanged() {
-              $.ajax({
-                  type: "POST",
-                  url: "moves.aspx/textChanged",
-                  contentType: "application/json; charset=utf-8",
-                  dataType: "json",
-                  success: function (doc) {
-                  },
-                  error: function (xhr, status, error) {
-                      console.log('textChanged Failed');
-                      alert(xhr.responseText);
-                  }
-                  });
-          }
-      </script>
   </head>
   <body>
     <form runat="server">
@@ -140,9 +124,7 @@
                           <div class="mb-3">
                             <span class="">First Name</span><br />
                             <div style="width: 200px;">
-                              <asp:TextBox ID="txtFirstName" CssClass="form-control" class="textbox" style="height:auto;" runat="server" 
-                                  onchange="$.ajax({type: 'GET', url: 'AddEmployee.aspx/textChanged',contentType: 'application/json; charset=utf-8',dataType: 'json',success: function (doc) {console.log('Epic Success');},error: function (xhr, status, error) {console.log('Epic Fail');alert(xhr.responseText);}}); });"
-                                  OnTextChanged="NameChanged" AutoCompleteType="Disabled" ></asp:TextBox>
+                              <asp:TextBox ID="txtFirstName" CssClass="form-control" class="textbox" style="height:auto;" runat="server" OnTextChanged="NameChanged" AutoCompleteType="Disabled" ></asp:TextBox>
                             </div>
                           </div>
                           <div class="mb-3">
